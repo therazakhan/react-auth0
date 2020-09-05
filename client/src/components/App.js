@@ -35,22 +35,24 @@ class App extends Component {
     if (loading) return <Loading />;
 
     return (
-      <Router>
-        <div className="container">
-          <Navigation />
-          <Jumbotron title={this.state.jumbotronTitle} />
-          <Switch>
-            <Route path="/contact" component={Contact} />
-            <Route path="/about" component={About} />
-            <Route exact path="/" render={(props) => (
-              <Feed feeds={this.state.feeds} />
-            )} />
-          </Switch>
-          <div className="footer">
-            <p>&copy; {this.state.name} Inc.</p>
+      <React.StrictMode>
+        <Router>
+          <div className="container">
+            <Navigation />
+            <Jumbotron title={this.state.jumbotronTitle} />
+            <Switch>
+              <Route path="/contact" component={Contact} />
+              <Route path="/about" component={About} />
+              <Route exact path="/" render={(props) => (
+                <Feed feeds={this.state.feeds} />
+              )} />
+            </Switch>
+            <div className="footer">
+              <p>&copy; {this.state.name} Inc.</p>
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </React.StrictMode>
     )
   }
 }
