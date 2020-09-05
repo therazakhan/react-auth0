@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useAuth0 } from '../react-auth0-spa';
+import { useAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import history from '../history';
 import Loading from './Loading';

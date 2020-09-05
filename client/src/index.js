@@ -2,17 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
-import { Auth0Provider } from "./react-auth0-spa";
+import { Auth0Provider } from "@auth0/auth0-react";
 import config from "./auth_config.json";
-import history from "./history";
 
-const onRedirectCallback = (appState) => {
-  history.push(
-    appState && appState.returnTo
-      ? appState.returnTo
-      : window.location.pathname
-  );
-};
+const onRedirectCallback = appState => {
+    window.history.replaceState(
+      {},
+      document.title,
+      appState && appState.targetUrl
+        ? appState.targetUrl
+        : window.location.pathname
+    );
+  };
 
 ReactDOM.render(
   <Auth0Provider

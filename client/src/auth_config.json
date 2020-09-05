@@ -1,4 +1,6 @@
 {
-    "domain": "dev-dz1dxo4g.us.auth0.com",
-    "clientId": "5BONEun2X4d3Ga5GirwLuVDQAximsaJw"
+  "domain": "dev-dz1dxo4g.us.auth0.com",
+  "clientId": "5BONEun2X4d3Ga5GirwLuVDQAximsaJw",
+  "audience": "https://dev-dz1dxo4g.us.auth0.com/api/v2/",
+  "redirect_uri": "http://localhost:3000"
 }
